@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Desafio Lâmpada</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="logo.svg" alt="" width="100px">
+        <h1>Lâmpada DNC</h1>
+    </header>
+    <section>
+        <img id="lampada" src="imagens/lampadadesligada.svg" alt="" onclick="Quebrar()"> <br>
+        <input class="botao" type="button" value="Ligar" id="Liga" onclick="Ligar()">
+        <input class="botao" type="button" value="Desligar" id="Desliga" onclick="Desligar()">
+    </section>
+
+    <script>
+
+        // Obtém o elemento da lâmpada
+        var lamp = document.getElementById("lampada");
+        var isBroken = false;
+
+        // Função para ligar a lâmpada
+        function Ligar() {
+            if (!isBroken)
+            lamp.src = 'imagens/ligada.svg';
+        }
+
+        function Desligar(){
+            if(!isBroken)
+            lamp.src = 'imagens/lampadadesligada.svg'
+        }
+        
+        lamp.addEventListener('click', Quebrar)
+        function Quebrar(){
+            lamp.src = 'imagens/lampadaquebrada.svg'
+            isBroken = true;
+        }
+
+        
+        
+    </script>
+</body>
+</html>
